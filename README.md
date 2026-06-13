@@ -1,10 +1,10 @@
-# Y68° — Street Ballers Network 🏀
+# HOOPX — Street Ballers Network 🏀
 
 > The world's most premium street sports network. Find, join, and create street games globally.
 
 ## 🌟 About The Project
 
-**Y68°** is a dynamic web application designed for street ballers around the world. From Tokyo to New York, the platform allows players to discover live and upcoming street games near them, join instantly, and build their reputation on city leaderboards.
+**HOOPX** is a dynamic web application designed for street ballers around the world. From Tokyo to New York, the platform allows players to discover live and upcoming street games near them, join instantly, and build their reputation on city leaderboards.
 
 ### ✨ Key Features
 - **Find Games:** Browse live and upcoming street games near you. Filter by skill level, location, or time slot.
@@ -23,7 +23,7 @@
 ```
 street-ballers/
 ├── public/                  # Static assets served as-is
-│   ├── favicon.svg          # Custom Y68° brand favicon
+│   ├── favicon.svg          # Custom HOOPX brand favicon
 │   ├── icons.svg            # SVG icon sprite sheet
 │   └── models/
 │       └── basketball.glb   # 3D basketball model (GLB format)
@@ -42,7 +42,7 @@ To get a local copy up and running, follow these simple steps:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Riyasonii2006/street-ballers.git
+   git clone https://github.com/RonitkumarSoni/Ball-pulses.git
    ```
 
 2. **Navigate into the directory**
@@ -64,4 +64,4 @@ To get a local copy up and running, follow these simple steps:
 This project is optimized for deployment on [Vercel](https://vercel.com/). Connect your GitHub repository to Vercel and it will automatically deploy using Vite's build settings.
 
 ## 📜 License
-Distributed under the MIT License. Copyright © 2026 Y68°. All rights reserved.
+Distributed under the MIT License. Copyright © 2026 HOOPX. All rights reserved.

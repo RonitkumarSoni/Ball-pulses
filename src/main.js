@@ -47,7 +47,7 @@ let currentSection = 'hero';
 const particlesGeometry = new THREE.BufferGeometry();
 const particlesCount = 400;
 const posArray = new Float32Array(particlesCount * 3);
-for(let i = 0; i < particlesCount * 3; i++) {
+for (let i = 0; i < particlesCount * 3; i++) {
   posArray[i] = (Math.random() - 0.5) * 15;
 }
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -85,10 +85,10 @@ scene.add(shadowMesh);
 const BALL_SCALE = 0.97;          // +10% from 0.885
 const FOOTER_SCALE = 0.5;          // shrunk specifically for footer (per user)
 const SECTIONS = {
-  hero:   { x: 0.5,   y: -0.45, z: 0,    scale: BALL_SCALE   }, // pulled right so text overlaps ball
-  stats:  { x: 2.2,   y:  0.0,  z: 0,    scale: BALL_SCALE   },
-  how:    { x: -2.2,  y:  0.0,  z: 0,    scale: BALL_SCALE   },
-  footer: { x: 2.5,   y: -1.3,  z: -2.0, scale: FOOTER_SCALE }, // small, far corner, pushed back
+  hero: { x: 0.5, y: -0.45, z: 0, scale: BALL_SCALE }, // pulled right so text overlaps ball
+  stats: { x: 2.2, y: 0.0, z: 0, scale: BALL_SCALE },
+  how: { x: -2.2, y: 0.0, z: 0, scale: BALL_SCALE },
+  footer: { x: 2.5, y: -1.3, z: -2.0, scale: FOOTER_SCALE }, // small, far corner, pushed back
 };
 
 // ─── LOAD BALL ──────────────────────────────────────────────────────────────
@@ -123,10 +123,10 @@ loader.load('/models/basketball.glb', (gltf) => {
 
   scene.add(ball);
   ballLoaded = true;
-  
+
   // HIDE LOADER
   hideLoader();
-  
+
   ballEntrance();
 }, undefined, (err) => console.error('GLB Error:', err));
 
@@ -183,7 +183,7 @@ let autoVel = {
   y: BASE_SPEED + Math.random() * 0.002,
 };
 
-function enableDrag()  { canvas.classList.add('drag-enabled'); }
+function enableDrag() { canvas.classList.add('drag-enabled'); }
 function disableDrag() { canvas.classList.remove('drag-enabled'); }
 
 function getPos(e) {
@@ -277,7 +277,7 @@ function setupScrollBall() {
       ball.position.z = lerp(SECTIONS.stats.z, SECTIONS.how.z, t) + depthOffset(ly);
       ball.scale.setScalar(lerp(baseScale * SECTIONS.stats.scale, baseScale * SECTIONS.how.scale, t));
     },
-    onEnter:     () => { currentSection = 'how'; },
+    onEnter: () => { currentSection = 'how'; },
     onLeaveBack: () => { currentSection = 'stats'; }
   });
 
@@ -294,7 +294,7 @@ function setupScrollBall() {
       ball.position.z = lerp(SECTIONS.how.z, SECTIONS.footer.z, t) + depthOffset(ly);
       ball.scale.setScalar(lerp(baseScale * SECTIONS.how.scale, baseScale * SECTIONS.footer.scale, t));
     },
-    onEnter:     () => { currentSection = 'footer'; },
+    onEnter: () => { currentSection = 'footer'; },
     onLeaveBack: () => { currentSection = 'how'; }
   });
 }
@@ -302,27 +302,27 @@ function setupScrollBall() {
 // ─── UI ENTRANCE ANIMATIONS ──────────────────────────────────────────────────
 const navTL = gsap.timeline({ delay: 0.15 });
 navTL
-  .to('.nav-logo',    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
-  .to('.nav-links',   { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
+  .to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
+  .to('.nav-links', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
   .to('.profile-btn', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.2)
-  .to('#ph-badge',    { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out'   }, 0.4)
-  .to('#event-card',  { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out'   }, 0.55)
-  .to('#hero-text',   { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out'   }, 0.65)
-  .to('#nav-arrow',   { opacity: 1,        duration: 0.5, ease: 'power2.out' }, 1.1)
-  .to('#sig-wrap',    { opacity: 1, y: 0,  duration: 0.4, ease: 'power2.out' }, 1.2)
-  .to('.sp1',         { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 1.2)
-  .to('.sp2',         { strokeDashoffset: 0, duration: 1.0, ease: 'power2.inOut' }, 1.8)
-  .to('.sp3',         { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' }, 2.0);
+  .to('#ph-badge', { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out' }, 0.4)
+  .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.55)
+  .to('#hero-text', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.65)
+  .to('#nav-arrow', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.1)
+  .to('#sig-wrap', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 1.2)
+  .to('.sp1', { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 1.2)
+  .to('.sp2', { strokeDashoffset: 0, duration: 1.0, ease: 'power2.inOut' }, 1.8)
+  .to('.sp3', { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' }, 2.0);
 
 // Stats — premium card stacking from TOP
 // All cards start stacked/overlapped at the top, then spread into grid on scroll
 const statCards = gsap.utils.toArray('.stat-card');
 
 const statStackOffsets = [
-  { y: 0,    rotate: -0.5, scale: 1    },  // card 0: anchor
-  { y: -5,   rotate: 0.8,  scale: 0.98 },  // card 1: slightly behind
-  { y: -95,  rotate: -0.8, scale: 0.96 },  // card 2: stacked up (overlapping from top)
-  { y: -100, rotate: 1,    scale: 0.94 },  // card 3: stacked up (overlapping from top)
+  { y: 0, rotate: -0.5, scale: 1 },  // card 0: anchor
+  { y: -5, rotate: 0.8, scale: 0.98 },  // card 1: slightly behind
+  { y: -95, rotate: -0.8, scale: 0.96 },  // card 2: stacked up (overlapping from top)
+  { y: -100, rotate: 1, scale: 0.94 },  // card 3: stacked up (overlapping from top)
 ];
 
 statCards.forEach((card, i) => {
@@ -364,8 +364,8 @@ gsap.to('.how-bg-text', {
 const stepCards = gsap.utils.toArray('.step-item');
 
 const stepStackOffsets = [
-  { y: 0,    rotate: -0.3, scale: 1    },  // card 0: anchor
-  { y: -90,  rotate: 0.5,  scale: 0.97 },  // card 1: stacked up
+  { y: 0, rotate: -0.3, scale: 1 },  // card 0: anchor
+  { y: -90, rotate: 0.5, scale: 0.97 },  // card 1: stacked up
   { y: -180, rotate: -0.6, scale: 0.94 },  // card 2: stacked further up
 ];
 
@@ -432,7 +432,7 @@ function animate() {
     ball.rotation.x += autoVel.x;
     ball.rotation.y += autoVel.y;
   }
-  
+
   particlesMesh.rotation.y += 0.0003;
   particlesMesh.position.y = Math.sin(Date.now() * 0.0005) * 0.05;
 

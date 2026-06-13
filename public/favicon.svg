@@ -19,8 +19,8 @@
   <!-- Subtle inner border -->
   <rect x="8" y="8" width="496" height="496" rx="72" ry="72" fill="none" stroke="#1a1a1a" stroke-width="2"/>
 
-  <!-- Y68° Text -->
-  <text x="256" y="300" text-anchor="middle" font-family="'Bebas Neue', 'Impact', 'Arial Black', sans-serif" font-weight="700" font-size="220" fill="#ffffff" letter-spacing="8">Y68°</text>
+  <!-- HOOPX Text -->
+  <text x="256" y="300" text-anchor="middle" font-family="'Bebas Neue', 'Impact', 'Arial Black', sans-serif" font-weight="700" font-size="180" fill="#ffffff" letter-spacing="8">HOOPX</text>
 
   <!-- Orange accent line -->
   <rect x="130" y="340" width="252" height="4" rx="2" fill="url(#accent)" filter="url(#glow)"/>
