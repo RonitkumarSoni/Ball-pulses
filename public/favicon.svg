@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#ff9f1c"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" ry="80" fill="#0a0a0a"/>
+
+  <!-- Subtle inner border -->
+  <rect x="8" y="8" width="496" height="496" rx="72" ry="72" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- Y68° Text -->
+  <text x="256" y="300" text-anchor="middle" font-family="'Bebas Neue', 'Impact', 'Arial Black', sans-serif" font-weight="700" font-size="220" fill="#ffffff" letter-spacing="8">Y68°</text>
+
+  <!-- Orange accent line -->
+  <rect x="130" y="340" width="252" height="4" rx="2" fill="url(#accent)" filter="url(#glow)"/>
+
+  <!-- Subtle basketball lines decoration -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#151515" stroke-width="1.5"/>
+  <path d="M36,256 Q256,200 476,256" fill="none" stroke="#151515" stroke-width="1.5"/>
+  <path d="M36,256 Q256,312 476,256" fill="none" stroke="#151515" stroke-width="1.5"/>
+</svg>
